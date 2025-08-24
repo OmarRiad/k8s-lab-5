@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: haproxy-cluster-role-binding-devops
+  namespace: haproxy-controller-devops
+subjects:
+- kind: ServiceAccount
+  name: haproxy-service-account-devops
+  namespace: haproxy-controller-devops
+roleRef:
+  kind: ClusterRole
+  name: haproxy-cluster-role-devops
+  apiGroup: rbac.authorization.k8s.io
